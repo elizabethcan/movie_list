@@ -9,11 +9,11 @@ var movies = [
   {title: 'Ex Machina'},
 ];
 
-function Search() {
+function Search(props) {
 	return (
 		<div>
 			<input placeholder="Search..."></input>
-			<button>Go</button>
+			<button onClick={props.onClick}>Go</button>
 		</div>
 	);
 }
@@ -28,14 +28,18 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
 		}
 	}
+
+	handleClick() {
+		alert('Go Clicked!')
+	}
+
 	render () {
 		return (
 			<div>
 				<h1>Movie List</h1>
-				<Search />
+				<Search onClick={this.handleClick.bind(this)}/>
 				<div>
 					{movies.map((movie) => {
 						return <MovieRow movie={movie}/>
