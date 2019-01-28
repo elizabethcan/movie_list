@@ -11,7 +11,7 @@ var movies = [
 function MovieRow(props) {
 	return (
 		<li>{props.movie.title}</li>
-	)
+	);
 }
 
 function App() {
@@ -19,11 +19,9 @@ function App() {
 		<div>
 			<h1>Movie List</h1>
 			<div>
-				<MovieRow movie={movies[0]}/>
-				<MovieRow movie={movies[1]}/>
-				<MovieRow movie={movies[2]}/>
-				<MovieRow movie={movies[3]}/>
-				<MovieRow movie={movies[4]}/>
+				{movies.map((movie) => {
+					return <MovieRow movie={movie}/>
+				})}
 			</div>
 		</div>
 	);
