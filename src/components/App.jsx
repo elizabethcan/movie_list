@@ -10,7 +10,7 @@ var movies = [
 
 function MovieRow(props) {
 	return (
-		<li>{props.movie}</li>
+		<li>{props.movie.title}</li>
 	)
 }
 
@@ -19,11 +19,11 @@ function App() {
 		<div>
 			<h1>Movie List</h1>
 			<div>
-				<MovieRow movie={movies[0].title}/>
-				<MovieRow movie={movies[1].title}/>
-				<MovieRow movie={movies[2].title}/>
-				<MovieRow movie={movies[3].title}/>
-				<MovieRow movie={movies[4].title}/>
+				<MovieRow movie={movies[0]}/>
+				<MovieRow movie={movies[1]}/>
+				<MovieRow movie={movies[2]}/>
+				<MovieRow movie={movies[3]}/>
+				<MovieRow movie={movies[4]}/>
 			</div>
 		</div>
 	);
