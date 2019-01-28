@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 var movies = [
   {title: 'Mean Girls'},
@@ -8,23 +9,41 @@ var movies = [
   {title: 'Ex Machina'},
 ];
 
+function Search() {
+	return (
+		<div>
+			<input placeholder="Search..."></input>
+			<button>Go</button>
+		</div>
+	);
+}
+
 function MovieRow(props) {
 	return (
 		<li>{props.movie.title}</li>
 	);
 }
 
-function App() {
-	return (
-		<div>
-			<h1>Movie List</h1>
+class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+
+		}
+	}
+	render () {
+		return (
 			<div>
-				{movies.map((movie) => {
-					return <MovieRow movie={movie}/>
-				})}
+				<h1>Movie List</h1>
+				<Search />
+				<div>
+					{movies.map((movie) => {
+						return <MovieRow movie={movie}/>
+					})}
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 }
 
 export default App;
