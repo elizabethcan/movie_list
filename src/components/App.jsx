@@ -1,5 +1,6 @@
 import React from 'react';
-import $ from 'jquery';
+import MovieRow from './MovieRow.jsx';
+import Search from './Search.jsx';
 
 var movies = [
   {title: 'Mean Girls'},
@@ -9,37 +10,36 @@ var movies = [
   {title: 'Ex Machina'},
 ];
 
-function Search(props) {
-	return (
-		<div>
-			<input placeholder="Search..."></input>
-			<button onClick={props.onClick}>Go</button>
-		</div>
-	);
-}
 
-function MovieRow(props) {
-	return (
-		<li>{props.movie.title}</li>
-	);
-}
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
+		this.handleChange = this.handleChange.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 		this.state = {
-		}
+			filter: null,
+		}	
 	}
 
 	handleClick() {
-		alert('Go Clicked!')
+		alert('click')
 	}
+
+	handleChange(event) {
+		console.log(event.target.value);
+	}
+	// when search is null we want to display all movies
+	// when there is a search term entered, if it matches a movie
+		// return just that movie
+	// else
+		// return no results found
 
 	render () {
 		return (
 			<div>
 				<h1>Movie List</h1>
-				<Search onClick={this.handleClick.bind(this)}/>
+				<Search />
 				<div>
 					{movies.map((movie) => {
 						return <MovieRow movie={movie}/>
