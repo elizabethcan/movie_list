@@ -25,7 +25,7 @@ class Search extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="search-bar">
         <input placeholder="Search..." onChange={this.handleChange}></input>
         <button onClick={this.handleClick}>Go</button>
       </div>

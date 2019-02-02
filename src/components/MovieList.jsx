@@ -16,7 +16,7 @@ class MovieList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="movieList">
         {movies.map((movie) => {
           return <MovieRow movie={movie} filter={this.props.filter}/>
         })}

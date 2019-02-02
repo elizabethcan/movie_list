@@ -21,7 +21,7 @@ class App extends React.Component {
 	render () {
 		return (
 			<div>
-				<h1>Movie List</h1>
+				<h1 className="header">Movie List</h1>
 				<Search updateList={this.updateList}/>
 				<MovieList filter={this.state.filter}/>
 			</div>
