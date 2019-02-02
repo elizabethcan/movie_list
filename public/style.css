@@ -1,0 +1,18 @@
+.header {
+  margin: 20px;
+}
+.search-bar {
+  margin: 20px;
+}
+
+.movieList {
+  border: solid 1px;
+  margin: 20px;
+}
+
+.movieRow {
+  list-style-type: none;
+  border: solid 1px;
+  margin: 5px;
+  padding: 10px;
+}
