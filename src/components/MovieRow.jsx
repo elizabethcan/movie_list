@@ -8,7 +8,7 @@ function MovieRow(props) {
 		return (
 			<li>{props.movie.title}</li>
 		);
-		} else if (movie === filter) {
+		} else if (movie.includes(filter)) {
 		return (
 			<li>{props.movie.title}</li>
 		);
