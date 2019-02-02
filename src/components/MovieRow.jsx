@@ -8,7 +8,7 @@ function MovieRow(props) {
 		return (
 			<li className="movieRow">{props.movie.title}</li>
 		);
-		} else if (movie.toLowerCase().includes(filter.toLowerCase())) {
+	} else if (movie.toLowerCase().includes(filter.toLowerCase())) {
 		return (
 			<li className="movieRow">{props.movie.title}</li>
 		);
