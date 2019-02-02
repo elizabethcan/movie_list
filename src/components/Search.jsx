@@ -11,14 +11,15 @@ class Search extends React.Component {
   }
 
   handleChange(event) {
-    console.log(event.target.value);
     this.setState({
       value: event.target.value
-    })
+    });
   }
   
   handleClick(event) {
     event.preventDefault();
+    console.log('search click')
+    this.props.updateList(this.state.value);
   }
   
 
