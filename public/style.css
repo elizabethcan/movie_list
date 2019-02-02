@@ -1,8 +1,16 @@
 .header {
   margin: 20px;
 }
+
+.add-movie {
+  margin: 20px;
+}
 .search-bar {
   margin: 20px;
+}
+
+button {
+  margin: 5px;
 }
 
 .movieList {

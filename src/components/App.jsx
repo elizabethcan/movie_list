@@ -1,4 +1,5 @@
 import React from 'react';
+import AddMovie from './AddMovie.jsx';
 import Search from './Search.jsx';
 import MovieList from './MovieList.jsx';
 
@@ -13,14 +14,14 @@ var movies = [
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.updateList = this.updateList.bind(this);
+		this.searchList = this.searchList.bind(this);
 		this.state = {
 			filter: '',
 			movies: movies
 		}	
 	}
 
-	updateList(filter) {
+	searchList(filter) {
 		console.log(`update list called`);
 		this.setState({
 			filter: filter
@@ -31,7 +32,8 @@ class App extends React.Component {
 		return (
 			<div>
 				<h1 className="header">Movie List</h1>
-				<Search updateList={this.updateList}/>
+        <AddMovie />
+				<Search searchList={this.searchList}/>
 				<MovieList filter={this.state.filter} movies={this.state.movies}/>
 			</div>
 		);

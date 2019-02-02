@@ -19,7 +19,7 @@ class Search extends React.Component {
   handleClick(event) {
     event.preventDefault();
     console.log('search click')
-    this.props.updateList(this.state.value);
+    this.props.searchList(this.state.value);
   }
   
 
