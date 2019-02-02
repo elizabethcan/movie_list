@@ -7,7 +7,7 @@ class App extends React.Component {
 		super(props);
 		this.updateList = this.updateList.bind(this);
 		this.state = {
-			filter: null,
+			filter: '',
 		}	
 	}
 
@@ -23,7 +23,7 @@ class App extends React.Component {
 			<div>
 				<h1>Movie List</h1>
 				<Search updateList={this.updateList}/>
-				<MovieList />
+				<MovieList filter={this.state.filter}/>
 			</div>
 		);
 	}

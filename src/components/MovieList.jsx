@@ -13,12 +13,12 @@ class MovieList extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
     return (
       <div>
         {movies.map((movie) => {
-          return <MovieRow movie={movie}/>
+          return <MovieRow movie={movie} filter={this.props.filter}/>
         })}
       </div>
     )
