@@ -1,28 +1,14 @@
 import React from 'react';
 import MovieRow from './MovieRow.jsx';
 
-var movies = [
-  {title: 'Mean Girls'},
-  {title: 'Hackers'},
-  {title: 'The Grey'},
-  {title: 'Sunshine'},
-  {title: 'Ex Machina'},
-];
-
-class MovieList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="movieList">
-        {movies.map((movie) => {
-          return <MovieRow movie={movie} filter={this.props.filter}/>
-        })}
-      </div>
-    )
-  }
+function MovieList(props) {
+  return (
+    <div className="movieList">
+      {props.movies.map((movie) => {
+        return <MovieRow movie={movie} filter={props.filter}/>
+      })}
+    </div>
+  )
 }
 
 export default MovieList;
