@@ -5,6 +5,7 @@ class Search extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleClear = this.handleClear.bind(this);
     this.state = {
       value: ''
     }
@@ -18,8 +19,12 @@ class Search extends React.Component {
   
   handleClick(event) {
     event.preventDefault();
-    console.log('search click')
     this.props.searchList(this.state.value);
+  }
+
+  handleClear(event) {
+    event.preventDefault();
+    this.props.searchList('');
   }
   
 
@@ -28,6 +33,7 @@ class Search extends React.Component {
       <div className="search-bar">
         <input placeholder="Search..." onChange={this.handleChange}></input>
         <button onClick={this.handleClick}>Go</button>
+        <button onClick={this.handleClear}>Clear</button>
       </div>
     );
   }
