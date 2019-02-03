@@ -16,7 +16,11 @@ class App extends React.Component {
   
   addToList(movie) {
     var newMovie = [];
-    newMovie.push({title: movie});
+    newMovie.push({
+      id: this.state.movies.length,
+      title: movie,
+      watched: false
+    });
     this.setState({
       movies: this.state.movies.concat(newMovie)
     })

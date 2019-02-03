@@ -6,11 +6,17 @@ function MovieRow(props) {
 	
 	if (filter.length === 0) {
 		return (
-			<li className="movieRow">{props.movie.title}</li>
+			<li className="movieRow">{
+        props.movie.title}
+        <button className="addBtn">Watched!</button>
+      </li>
 		);
 	} else if (movie.toLowerCase().includes(filter.toLowerCase())) {
 		return (
-			<li className="movieRow">{props.movie.title}</li>
+      <li className="movieRow">
+        {props.movie.title}
+        <button className="addBtn">Watched!</button>
+      </li>
 		);
 	} else {
 		return null;

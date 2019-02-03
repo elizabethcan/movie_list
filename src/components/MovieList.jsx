@@ -5,7 +5,7 @@ function MovieList(props) {
   return (
     <div className="movieList">
       {props.movies.map((movie) => {
-        return <MovieRow movie={movie} filter={props.filter}/>
+        return <MovieRow key={movie.id} movie={movie} filter={props.filter}/>
       })}
     </div>
   )
