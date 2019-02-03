@@ -4,7 +4,7 @@ import MovieRow from './MovieRow.jsx';
 function MovieList(props) {
   return (
     <div className="movieList">
-      {props.movies.map((movie) => {
+      {props.unWatched.map((movie) => {
         return <MovieRow key={movie.id} movie={movie} filter={props.filter}/>
       })}
     </div>
