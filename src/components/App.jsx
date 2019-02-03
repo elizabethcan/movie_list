@@ -3,14 +3,6 @@ import AddMovie from './AddMovie.jsx';
 import Search from './Search.jsx';
 import MovieList from './MovieList.jsx';
 
-var movies = [
-  {title: 'Mean Girls'},
-  {title: 'Hackers'},
-  {title: 'The Grey'},
-  {title: 'Sunshine'},
-  {title: 'Ex Machina'},
-];
-
 class App extends React.Component {
 	constructor(props) {
     super(props);
@@ -18,7 +10,7 @@ class App extends React.Component {
 		this.searchList = this.searchList.bind(this);
 		this.state = {
 			filter: '',
-			movies: movies
+			movies: []
 		}	
   }
   
@@ -26,7 +18,7 @@ class App extends React.Component {
     var newMovie = [];
     newMovie.push({title: movie});
     this.setState({
-      movies: movies.concat(newMovie)
+      movies: this.state.movies.concat(newMovie)
     })
   }
 
@@ -37,14 +29,23 @@ class App extends React.Component {
   }
 
 	render () {
-		return (
-			<div>
-				<h1 className="header">Movie List</h1>
-        <AddMovie addToList={this.addToList}/>
-				<Search searchList={this.searchList}/>
-				<MovieList filter={this.state.filter} movies={this.state.movies}/>
-			</div>
-		);
+    if (this.state.movies.length === 0) {
+      return (
+        <div>
+          <h1>Movie List - Please Add A Movie!</h1>
+          <AddMovie addToList={this.addToList}/>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h1 className="header">Movie List</h1>
+          <AddMovie addToList={this.addToList}/>
+          <Search searchList={this.searchList}/>
+          <MovieList filter={this.state.filter} movies={this.state.movies}/>
+        </div>
+      );
+    }
 	}
 }
 
