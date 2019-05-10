@@ -4,25 +4,24 @@ import Search from './Search.jsx';
 import MovieList from './MovieList.jsx';
 
 class App extends React.Component {
-	constructor(props) {
+  constructor(props) {
     super(props);
-		this.state = {
-			filter: '',
+    this.state = {
+      searchTerm: '',
       unWatched: [],
       watched: [],
       newMovie: null,
     }
     this.newMovie = this.newMovie.bind(this);
     this.addToList = this.addToList.bind(this);
-		this.searchList = this.searchList.bind(this);
+    this.searchList = this.searchList.bind(this);
   }
 
   newMovie(event) {
-    var movie = event.target.value;
     this.setState({
       newMovie: {
         id: this.state.unWatched.length + this.state.watched.length,
-        title: movie,
+        title: event.target.value,
         watched: false
       }
     });
@@ -35,14 +34,14 @@ class App extends React.Component {
     });
   }
 
-	searchList(filter) {
-    console.log('search list: ', filter)
-		this.setState({
-			filter: filter
-		});
+  searchList(searchTerm) {
+    console.log('search list: ', searchTerm)
+    this.setState({
+      searchTerm: searchTerm
+    });
   }
 
-	render () {
+  render() {
     if (this.state.unWatched.length + this.state.watched.length === 0) {
       return (
         <div>
@@ -56,11 +55,11 @@ class App extends React.Component {
           <h1 className="header">Movie List</h1>
           <AddMovie enterMovie={this.newMovie} addToList={this.addToList}/>
           <Search searchList={this.searchList}/>
-          <MovieList filter={this.state.filter} unWatched={this.state.unWatched}/>
+          <MovieList searchTerm={this.state.searchTerm} unWatched={this.state.unWatched}/>
         </div>
       );
     }
-	}
+  }
 }
 
 export default App;
