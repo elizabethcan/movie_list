@@ -18,7 +18,6 @@ class App extends React.Component {
   }
 
   newMovie(event) {
-    console.log(`newMovie reached`)
     var movie = event.target.value;
     this.setState({
       newMovie: {
@@ -30,7 +29,6 @@ class App extends React.Component {
   }
   
   addToList() {
-    console.log(`add to list reached`)
     var newMovie = [this.state.newMovie];
     this.setState({
       unWatched: this.state.unWatched.concat(newMovie)
