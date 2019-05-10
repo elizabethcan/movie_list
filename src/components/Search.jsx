@@ -24,6 +24,9 @@ class Search extends React.Component {
 
   handleClear(event) {
     event.preventDefault();
+    this.setState({
+      value: ''
+    })
     this.props.searchList('');
   }
   
@@ -31,7 +34,7 @@ class Search extends React.Component {
   render () {
     return (
       <div className="search-bar">
-        <input placeholder="Search..." onChange={this.handleChange}></input>
+        <input placeholder="Search..." onChange={this.handleChange} value={this.state.value}></input>
         <button onClick={this.handleClick}>Go</button>
         <button onClick={this.handleClear}>Clear</button>
       </div>

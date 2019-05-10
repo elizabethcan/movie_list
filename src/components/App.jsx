@@ -36,6 +36,7 @@ class App extends React.Component {
   }
 
 	searchList(filter) {
+    console.log('search list: ', filter)
 		this.setState({
 			filter: filter
 		});
