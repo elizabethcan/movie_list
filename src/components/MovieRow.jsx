@@ -6,19 +6,19 @@ function MovieRow(props) {
     return (
       <li className="movieRow">{
         props.movie.title}
-        <Button movie={props.movie}/>
+        <Button movie={props.movie} toggleWatched={props.toggleWatched}/>
       </li>
     );
   } else if (props.movie.title.toLowerCase().includes(props.searchTerm.toLowerCase())) {
     return (
       <li className="movieRow">
         {props.movie.title}
-        <Button movie={props.movie}/>
+        <Button movie={props.movie} toggleWatched={props.toggleWatched}/>
       </li>
     );
   } else {
     return (
-      <li className="noResult">
+      <li className="noResults">
         Movie Not Found
       </li>
     );

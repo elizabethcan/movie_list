@@ -11,9 +11,10 @@ class App extends React.Component {
       newMovie: null,
       movies: [],
     }
-    this.newMovie = this.newMovie.bind(this);
     this.addToList = this.addToList.bind(this);
+    this.newMovie = this.newMovie.bind(this);
     this.searchList = this.searchList.bind(this);
+    this.toggleWatched = this.toggleWatched.bind(this);
   }
 
   addToList() {
@@ -40,8 +41,9 @@ class App extends React.Component {
     });
   }
 
-  toggleWatched(id) {
-    
+  toggleWatched(event) {
+    console.log(`movie id: ${event.target.id}`);
+    // can use id as the index in list of movies, but once i am able to start deleting movies, this will no longer work...can also pass down index as id for button
   }
 
   render() {
@@ -58,7 +60,7 @@ class App extends React.Component {
           <h1 className="header">Movie List</h1>
           <AddMovie enterMovie={this.newMovie} addToList={this.addToList}/>
           <Search searchList={this.searchList}/>
-          <MovieList searchTerm={this.state.searchTerm} movies={this.state.movies}/>
+          <MovieList searchTerm={this.state.searchTerm} movies={this.state.movies} toggleWatched={this.toggleWatched}/>
         </div>
       );
     }
