@@ -8,9 +8,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchTerm: '',
-      unWatched: [],
-      watched: [],
       newMovie: null,
+      movies: [],
     }
     this.newMovie = this.newMovie.bind(this);
     this.addToList = this.addToList.bind(this);
@@ -20,7 +19,7 @@ class App extends React.Component {
   newMovie(event) {
     this.setState({
       newMovie: {
-        id: this.state.unWatched.length + this.state.watched.length,
+        id: this.state.movies.length,
         title: event.target.value,
         watched: false
       }
@@ -30,7 +29,7 @@ class App extends React.Component {
   addToList() {
     var newMovie = [this.state.newMovie];
     this.setState({
-      unWatched: this.state.unWatched.concat(newMovie)
+      movies: this.state.movies.concat(newMovie)
     });
   }
 
@@ -42,7 +41,7 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.state.unWatched.length + this.state.watched.length === 0) {
+    if (this.state.movies.length === 0) {
       return (
         <div>
           <h1>Movie List - Please Add A Movie!</h1>
@@ -55,7 +54,7 @@ class App extends React.Component {
           <h1 className="header">Movie List</h1>
           <AddMovie enterMovie={this.newMovie} addToList={this.addToList}/>
           <Search searchList={this.searchList}/>
-          <MovieList searchTerm={this.state.searchTerm} unWatched={this.state.unWatched}/>
+          <MovieList searchTerm={this.state.searchTerm} movies={this.state.movies}/>
         </div>
       );
     }
