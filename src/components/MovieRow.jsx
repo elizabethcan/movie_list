@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 function MovieRow(props) {
 	const movie = props.movie.title;
@@ -8,14 +9,14 @@ function MovieRow(props) {
 		return (
 			<li className="movieRow">{
         props.movie.title}
-        <button className="addBtn">Watched!</button>
+        <Button watched={props.movie.watched}/>
       </li>
 		);
 	} else if (movie.toLowerCase().includes(searchTerm.toLowerCase())) {
 		return (
       <li className="movieRow">
         {props.movie.title}
-        <button className="addBtn">Watched!</button>
+        <Button watched={props.movie.watched}/>
       </li>
 		);
 	} else {
