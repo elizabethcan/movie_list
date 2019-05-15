@@ -29,8 +29,15 @@ button {
   background-color: green;
   border: none;
   float: right;
+  color: white;
 }
 
 .unwatched {
   float: right;
+}
+
+.noResult {
+  list-style-type: none;
+  margin: 5px;
+  padding: 10px;
 }
