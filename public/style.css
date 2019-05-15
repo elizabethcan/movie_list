@@ -25,6 +25,12 @@ button {
   padding: 10px;
 }
 
-.addBtn {
+.watched {
+  background-color: green;
+  border: none;
+  float: right;
+}
+
+.unwatched {
   float: right;
 }

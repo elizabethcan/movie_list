@@ -1,13 +1,13 @@
 import React from 'react';
 
 function Button(props) {
-  if (props.watched === true) {
+  if (props.movie.watched === true) {
     return (
-      <button>Watched!</button>
+      <button className="watched" id={props.movie.id}>Watched!</button>
     );
   } else {
     return (
-      <button>test</button>
+      <button className="unwatched" id={props.movie.id}>Watched!</button>
     )
   }
 }

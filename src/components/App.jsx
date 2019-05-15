@@ -16,6 +16,13 @@ class App extends React.Component {
     this.searchList = this.searchList.bind(this);
   }
 
+  addToList() {
+    var newMovie = [this.state.newMovie];
+    this.setState({
+      movies: this.state.movies.concat(newMovie)
+    });
+  }
+
   newMovie(event) {
     this.setState({
       newMovie: {
@@ -26,18 +33,15 @@ class App extends React.Component {
     });
   }
   
-  addToList() {
-    var newMovie = [this.state.newMovie];
-    this.setState({
-      movies: this.state.movies.concat(newMovie)
-    });
-  }
-
   searchList(searchTerm) {
     console.log('search list: ', searchTerm)
     this.setState({
       searchTerm: searchTerm
     });
+  }
+
+  toggleWatched(id) {
+    
   }
 
   render() {
