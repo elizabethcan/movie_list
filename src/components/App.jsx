@@ -10,6 +10,7 @@ class App extends React.Component {
       searchTerm: '',
       newMovie: null,
       movies: [],
+      watched: false,
     }
     this.addToList = this.addToList.bind(this);
     this.newMovie = this.newMovie.bind(this);
@@ -65,7 +66,7 @@ class App extends React.Component {
           <h1 className="header">Movie List</h1>
           <AddMovie enterMovie={this.newMovie} addToList={this.addToList}/>
           <Search searchList={this.searchList}/>
-          <MovieList searchTerm={this.state.searchTerm} movies={this.state.movies} toggleWatched={this.toggleWatched}/>
+          <MovieList displayWatched={this.state.watched} searchTerm={this.state.searchTerm} movies={this.state.movies} toggleWatched={this.toggleWatched}/>
         </div>
       );
     }
