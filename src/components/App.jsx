@@ -44,6 +44,11 @@ class App extends React.Component {
   toggleWatched(event) {
     console.log(`movie id: ${event.target.id}`);
     // can use id as the index in list of movies, but once i am able to start deleting movies, this will no longer work...can also pass down index as id for button
+    var movies = this.state.movies;
+    movies[event.target.id].watched = !movies[event.target.id].watched;
+    this.setState({
+      movies: movies
+    });
   }
 
   render() {
